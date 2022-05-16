@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .image {
+                display: inline-block;
+                width: 256px;
+            }
+            
+            .title {
+                display: inline-block;
+                width: 256px;
+            }
+            
+            .img_container {
+                display: inline-block;
+                width: 256px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="headings">
+<!--             <div class="title">appearance</div>
+            <div class="title">structure</div>
+            <div class="title">w/o sampling, lambda_cls=1, lambda_ss=5</div>
+            <div class="title">w/o sampling, lambda_cls=1, lambda_ss=2</div>
+            <div class="title">w/o sampling, lambda_cls=1, lambda_ss=1</div>
+            <div class="title">NN with AvgKeys, lambda_cls=1, lambda_ss=1</div>
+            <div class="title">NN with AvgKeys, lambda_cls=1, lambda_ss=2</div>
+            <div class="title">NN with AvgKeys+CLS, lambda_cls=1, lambda_ss=1</div> -->
+        </div>
+        <div id="root"></div>
+    </body>
+    
+    <script>
+        root = document.getElementById("root")
+        offset = 0
+        for (i = 0; i < 100; i++) {
+            img_idx = offset+i
+            root.innerHTML += '<p>'+img_idx+'</p>'
+            root.innerHTML += `<div class='img_container'> <div>appearance</div> <img class='image' src='./sd_dogs/textures/${img_idx}.jpg' /> </div>`
+            root.innerHTML += `<div class='img_container'> <div>structure</div> <img class='image' src='./sd_dogs/structures/${img_idx}.jpg' /> </div>`
+
+
+            root.innerHTML += `<div class='img_container'> <div>Korean</div> <img class='image' src='./sd_dogs/korean/${img_idx}.jpg' alt='N/A' /> </div>`
+            root.innerHTML += `<div class='img_container'> <div>SA</div> <img class='image' src='./sd_dogs/SA/${img_idx}.jpg' alt='N/A' /> </div>`
+            root.innerHTML += `<div class='img_container'> <div>wct2</div> <img class='image' src='./sd_dogs/wct2/${img_idx}.jpg' alt='N/A' /> </div>`
+            root.innerHTML += `<div class='img_container'> <div>Splice</div> <img class='image' src='./sd_dogs/splice/${img_idx}.jpg' alt='N/A' /> </div>`
+            root.innerHTML += `<div class='img_container'> <div>SpliceNet, NN</div> <img class='image' src='./sd_dogs/ours/${img_idx}.jpg' alt='N/A' /> </div>`
+            root.innerHTML += ` <br />`
+            root.innerHTML += ` <hr />`
+            root.innerHTML += ` <br />`
+        }
+
+    </script>
+</html>
